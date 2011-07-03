@@ -1,4 +1,4 @@
 problem*
-trash/*
-__pychace__
+trash/
+__pycache__/
 *.pyc
