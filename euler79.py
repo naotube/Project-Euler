@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 if isMostLeft:
                     passcode.append(d)
                     digits.remove(d)
-                    numbers = [number.replace(d, '') for number in numbers]
-            if '' in numbers:
-                numbers.remove('')
+                    numbers = [number[1:] if number[0] == d else number for number in numbers]
+                    while '' in numbers:
+                        numbers.remove('')
         print("".join(passcode))
