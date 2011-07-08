@@ -34,13 +34,12 @@ def is_prime(number):
 
 def prime_generator(maximum=1000000):
     primes = []
-    number = 1
     count = 1
     UNIT_LENGTH = 1000
     queue = []
     for i in range(2,UNIT_LENGTH):
         queue.append(i)
-    while number < maximum:
+    while queue[0] < maximum:
         if len(queue) < 10:
             following_numbers = []
             for i in range(UNIT_LENGTH):
@@ -59,9 +58,8 @@ def prime_generator(maximum=1000000):
                     following_queue.append(i)
             queue = queue + following_queue
 
-        number = queue[0]
-        primes.append(number)
-        yield number
+        primes.append(queue[0])
+        yield queue[0]
 
         new_queue = []
         if queue[0] < sqrt(maximum):
