@@ -2,3 +2,4 @@ problem*
 trash/
 __pycache__/
 *.pyc
+*.swp
