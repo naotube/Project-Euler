@@ -45,7 +45,7 @@ if __name__ == "__main__":
     maximum = 10
     answer = 0
 
-    while maximum < 10000:
+    while maximum < 100000:
         gen = util_euler.prime_generator(maximum)
         prime_brother = [p for p in combinations(gen,2) if is_brother(p[0], p[1])]
 
@@ -54,10 +54,9 @@ if __name__ == "__main__":
             prime_brother = list(set([tuple(set(p[0] + p[1])) for p in combinations(prime_brother, 2) if are_brothers(p[0], p[1])]))
             prime_brother = [p for p in prime_brother if len(p) > tuple_length]
             print(prime_brother)
-            # conditional statement for break may not be correct
-            if tuple_length == 6 and len(prime_brother) > 0:
-                answer = min(prime_brother[0])
             tuple_length += 1
+            if tuple_length == 7 and not prime_brother == []:
+                answer = min(prime_brother[0])
         if not answer == 0:
             break
         maximum *= 10
