@@ -32,7 +32,7 @@ def is_prime(number):
             return False
     return True
 
-def prime_generator(maximum=1000000):
+def prime_generator(maximum=1000000, minimum=2):
     primes = []
     count = 1
     UNIT_LENGTH = 1000
@@ -59,7 +59,8 @@ def prime_generator(maximum=1000000):
             queue = queue + following_queue
 
         primes.append(queue[0])
-        yield queue[0]
+        if queue[0] >= minimum:
+            yield queue[0]
 
         new_queue = []
         if queue[0] < sqrt(maximum):
