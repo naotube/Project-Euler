@@ -5,8 +5,6 @@ primes = [2,3]
 def is_prime(number):
     """if num is a prime number, returns True, else returms False
     >>> is_prime(3)
-    False
-    >>> is_prime(3)
     True
     >>> is_prime(23)
     True
