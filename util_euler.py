@@ -186,14 +186,9 @@ def is_palindrome(string):
         >>> is_palindrome('56165')
         True
     """
-    index = 0
-    if string[0] == '0':
-        return False
-    while index < len(string) / 2:
-        if not string[index] == string[-(index+1)]:
-            return False
-        index = index + 1
-    return True
+    if string == string[::-1]:
+        return True
+    return False
 
 if __name__ == "__main__":
     import doctest
